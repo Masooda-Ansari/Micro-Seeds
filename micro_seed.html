@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro Seeds — Grow Naturally</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="micro.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-icon">🌱</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">GROWING SOMETHING GREAT...</div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon">🌱</div>
+    Micro Seeds
+  </a>
+  <ul class="nav-links">
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#manufacturing">Manufacturing</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="cart-nav-btn" onclick="toggleCart()" aria-label="Cart">
+      🛒
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+    <a href="#contact" class="btn btn-green nav-cta">Get Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#hero" onclick="closeMobileMenu()">Home</a></li>
+    <li><a href="#products" onclick="closeMobileMenu()">Products</a></li>
+    <li><a href="#manufacturing" onclick="closeMobileMenu()">Manufacturing</a></li>
+    <li><a href="#about" onclick="closeMobileMenu()">About Us</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="botanical botanical-1">🌿</div>
+  <div class="botanical botanical-2">🌾</div>
+  <div class="botanical botanical-3">🌻</div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">🌱 100% Organic &amp; Certified</div>
+    <h1 class="hero-title">
+      Grow <em>Naturally</em><br>with Micro Seeds
+    </h1>
+    <p class="hero-subtitle">
+      Premium quality organic seeds for healthy farming and gardening.
+      Empowering farmers with superior genetics and sustainable agricultural practices.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn btn-primary">Browse Products →</a>
+      <a href="#contact" class="btn btn-outline">Get a Quote</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">99<span>%</span></div>
+        <div class="stat-label">Seed Purity</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500<span>+</span></div>
+        <div class="stat-label">Farmer Partners</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12<span>+</span></div>
+        <div class="stat-label">Seed Varieties</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Plant growth">
+      <div class="hero-badge"><span>99%<br>PURE<br>SEEDS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES STRIP -->
+<div id="features-strip">
+  <div class="feature-strip-item"><span class="icon">✅</span> Lab Certified</div>
+  <div class="feature-strip-item"><span class="icon">🚚</span> Pan India Delivery</div>
+  <div class="feature-strip-item"><span class="icon">🔬</span> Scientifically Tested</div>
+  <div class="feature-strip-item"><span class="icon">🌍</span> Eco-Friendly Packaging</div>
+  <div class="feature-strip-item"><span class="icon">📞</span> Farmer Support Helpline</div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Our Seeds</div>
+      <h2>Popular Seeds</h2>
+      <p>We provide 100% organic and high-yield micro seeds tested for quality and productivity.</p>
+    </div>
+
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All Seeds</button>
+      <button class="filter-tab" data-filter="grain">Grain</button>
+      <button class="filter-tab" data-filter="vegetable">Vegetable</button>
+      <button class="filter-tab" data-filter="herb">Herb</button>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+      <!-- Cards rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- MANUFACTURING -->
+<section id="manufacturing">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">How We Work</div>
+      <h2>Our Manufacturing Process</h2>
+      <p>We use advanced agricultural technology and strict quality control to deliver high-performance seeds.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <span class="step-icon">🌾</span>
+        <h3>Seed Selection</h3>
+        <p>Premium quality seeds sourced from certified farms with proven genetic lineages and high germination potential.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <span class="step-icon">⚙️</span>
+        <h3>Cleaning &amp; Grading</h3>
+        <p>Modern machinery removes impurities and grades seeds by size and density for consistent crop performance.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <span class="step-icon">🔬</span>
+        <h3>Quality Testing</h3>
+        <p>Scientific lab testing ensures high germination rates, purity standards, and freedom from pathogens.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">04</div>
+        <span class="step-icon">📦</span>
+        <h3>Secure Packaging</h3>
+        <p>Moisture-proof, eco-friendly packaging for longer shelf life and safe delivery to every corner of India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-imagery reveal">
+        <img class="about-img-main"
+          src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=800&q=80"
+          alt="Seeds">
+        <div class="about-years">
+          <div class="num">10+</div>
+          <div class="label">Years of<br>Excellence</div>
+        </div>
+        <img class="about-img-accent"
+          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=300&q=80"
+          alt="Agriculture">
+      </div>
+      <div class="about-content reveal reveal-delay-2">
+        <div class="section-tag">About Micro Seeds</div>
+        <h2>Growing the Future with Innovation &amp; Quality</h2>
+        <p>Micro Seeds is committed to delivering high-quality agricultural seeds that improve crop productivity and support sustainable farming. With advanced research and strict quality control, we ensure that farmers receive the best seed varieties for maximum yield.</p>
+        <p>Our journey is built on trust, sustainability, and continuous improvement to ensure better harvests and stronger farming communities across India.</p>
+        <ul class="values-list">
+          <li>
+            <span class="vi">🌱</span>
+            <div><strong>Premium Quality</strong><span>Certified and lab-tested seeds with 99% purity guarantee.</span></div>
+          </li>
+          <li>
+            <span class="vi">🔬</span>
+            <div><strong>Modern Technology</strong><span>Advanced seed processing using the latest agri-tech methods.</span></div>
+          </li>
+          <li>
+            <span class="vi">🌍</span>
+            <div><strong>Sustainable Vision</strong><span>Eco-friendly farming solutions for a better tomorrow.</span></div>
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Talk to Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section id="mission">
+  <div class="container">
+    <div class="section-header reveal" style="color:var(--cream)">
+      <div class="section-tag" style="color:var(--sprout)">What Drives Us</div>
+      <h2>Our Mission &amp; Vision</h2>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-card reveal reveal-delay-1">
+        <span class="card-icon">👁️</span>
+        <h3>Our Mission</h3>
+        <p>To deliver superior quality seeds using advanced agricultural technology that enhances productivity and promotes sustainable farming. We aim to empower farmers with reliable solutions for better harvests.</p>
+      </div>
+      <div class="mission-card reveal reveal-delay-2">
+        <span class="card-icon">🎯</span>
+        <h3>Our Vision</h3>
+        <p>To become a trusted leader in seed innovation by providing high-performance seed varieties and contributing to long-term agricultural growth and food security across India and beyond.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Farmer Stories</div>
+      <h2>What Farmers Say</h2>
+      <p>Real stories from the people we serve.</p>
+    </div>
+  </div>
+  <div class="testimonials-track-wrapper">
+    <div class="testimonials-track" id="testimonials-track">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-tag">Get In Touch</div>
+        <h2>Let's Grow Together</h2>
+        <p>Whether you need bulk seeds, expert advice, or a custom quote — we're here to help farmers thrive.</p>
+        <ul class="contact-details">
+          <li>
+            <div class="icon-wrap">📍</div>
+            <div>123 Seeds Street, Garhwa, Jharkhand, India</div>
+          </li>
+          <li>
+            <div class="icon-wrap">📞</div>
+            <div><a href="tel:+7389204749">+91 73892 04749</a></div>
+          </li>
+          <li>
+            <div class="icon-wrap">✉️</div>
+            <div><a href="mailto:info@microseeds.com">info@microseeds.com</a></div>
+          </li>
+          <li>
+            <div class="icon-wrap">🕗</div>
+            <div>Mon–Sat, 9 AM – 6 PM IST</div>
+          </li>
+        </ul>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook">f</a>
+          <a href="#" class="social-link" title="Twitter">t</a>
+          <a href="#" class="social-link" title="Instagram">ig</a>
+          <a href="https://www.youtube.com/@microseeds" class="social-link" title="YouTube">yt</a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal reveal-delay-2" id="contact-form-wrapper">
+        <h3>Send Us a Message</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" placeholder="Rajesh Kumar" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" placeholder="+91 00000 00000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="interest">Interested In</label>
+            <select id="interest">
+              <option value="">Select a seed type...</option>
+              <option>Wheat Seeds</option>
+              <option>Rice Seeds</option>
+              <option>Vegetable Seeds</option>
+              <option>Herb Seeds</option>
+              <option>Bulk Order / Custom</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us about your farming needs, quantity required, location..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-green" style="width:100%;justify-content:center">
+            Send Message 🌱
+          </button>
+        </form>
+        <div class="form-success" id="form-success">
+          <div class="success-icon">🌱</div>
+          <h3>Message Sent!</h3>
+          <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="container">
+    <div class="section-tag" style="color:var(--sprout);justify-content:center">Stay Updated</div>
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Get farming tips, seasonal seed guides, and exclusive offers delivered to your inbox.</p>
+    <div class="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="Enter your email address">
+      <button onclick="subscribeNewsletter()">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-logo" style="color:var(--cream)">
+        <div class="nav-logo-icon">🌱</div>
+        Micro Seeds
+      </a>
+      <p>We believe everyone should experience the joys of growing. Premium seeds, expert care, sustainable future.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">f</a>
+        <a href="#" class="social-link">t</a>
+        <a href="#" class="social-link">ig</a>
+        <a href="#" class="social-link">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#manufacturing">Manufacturing</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Seed Types</h4>
+      <ul>
+        <li><a href="#products">Wheat Seeds</a></li>
+        <li><a href="#products">Rice Seeds</a></li>
+        <li><a href="#products">Vegetable Seeds</a></li>
+        <li><a href="#products">Herb Seeds</a></li>
+        <li><a href="#products">Micro Greens</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">📍 Garhwa, Jharkhand</a></li>
+        <li><a href="tel:+7389204749">📞 +91 73892 04749</a></li>
+        <li><a href="mailto:info@microseeds.com">✉️ info@microseeds.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Micro Seeds. All rights reserved.</span>
+    <span>Made with 🌱 for Indian Farmers</span>
+  </div>
+</footer>
+
+<!-- CART SIDEBAR -->
+<div id="cart-overlay" onclick="toggleCart()"></div>
+<div id="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 Your Cart</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty">
+      <div class="empty-icon">🌱</div>
+      <p>Your cart is empty.<br>Add some seeds!</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cart-total">₹0</strong>
+    </div>
+    <button class="btn btn-green" style="width:100%;justify-content:center" onclick="checkout()">
+      Proceed to Quote →
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast-container"></div>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Back to top" onclick="scrollToTop()">↑</button>
+
+<script src="App.js">
+
+</script>
+</body>
+</html>
